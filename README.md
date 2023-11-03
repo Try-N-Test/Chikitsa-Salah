@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chikitsa Salah Readme
+Chikitsa Salah is an integrated healthcare platform that offers a range of essential services, such as appointment booking, advisory services, and chatbot support.
 
-## Getting Started
+## Features
+Appointment Booking
+Chikitsa Salah simplifies the process of finding and booking appointments with qualified doctors and specialists. You can search for doctors based on location, specialty, and availability. Once you've selected a doctor, you can book an appointment directly through the app.
 
-First, run the development server:
+## Advisory
+Chikitsa Salah provides various advisory services, including health tips, articles, and videos. Additionally, you can receive personalized advice from doctors and other healthcare professionals through the app.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Chatbot Support
+Chikitsa Salah's chatbot offers 24/7 support for various health concerns. The chatbot can answer your questions, offer advice, and facilitate connections with a doctor if necessary.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Benefits
+Chikitsa Salah offers several benefits to users:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Convenience
+Chikitsa Salah serves as a single platform for all your healthcare needs. You can book appointments, receive advice, and chat with a doctor, all in one place.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Affordability
+Chikitsa Salah's services are designed to be affordable and accessible to everyone.
 
-## Learn More
+### Quality
+ Chikitsa Salah collaborates with qualified doctors and healthcare professionals to deliver high-quality services.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Chikitsa Salah is a comprehensive healthcare platform that offers a range of essential services, including appointment booking, advisory services, and chatbot support. It prioritizes convenience, affordability, and high-quality services. Download the Chikitsa Salah app today and take control of your health!
