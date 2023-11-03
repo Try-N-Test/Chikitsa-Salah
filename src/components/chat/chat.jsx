@@ -1,6 +1,6 @@
 import React from 'react'
 import {AiOutlineSend} from "react-icons/ai"
-function chat() {
+async function chat() {
   return (
    <>
    <>
