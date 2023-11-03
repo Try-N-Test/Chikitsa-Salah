@@ -23,5 +23,5 @@ Chikitsa Salah's services are designed to be affordable and accessible to everyo
 ### Quality
  Chikitsa Salah collaborates with qualified doctors and healthcare professionals to deliver high-quality services.
 
-
+## Conclusion
 Chikitsa Salah is a comprehensive healthcare platform that offers a range of essential services, including appointment booking, advisory services, and chatbot support. It prioritizes convenience, affordability, and high-quality services. Download the Chikitsa Salah app today and take control of your health!
