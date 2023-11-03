@@ -34,7 +34,7 @@ const Contact = () => {
     <section className="my-20" id="contact">
       <div className="my-12">
         <h1 className="text-center font-serif text-3xl font-bold md:text-5xl">
-          Contact <span className="text-primary">Us</span>
+          Contact <span className="text-secondary">Us</span>
         </h1>
         <h1 className="mt-4 text-center font-sans text-base font-light">
           We would love to hear from you
@@ -43,26 +43,29 @@ const Contact = () => {
 
       <div className="mb-12 md:grid md:grid-cols-2">
         <div className="m-12 md:m-0 md:ml-36 ">
-          <form ref={form} onSubmit={sendEmail}>
+          <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 content-center gap-4 ">
             <input
               type="text"
               name="name"
               placeholder="Your Full Name"
               required
+              className="border-2 border-gray-300 rounded-xl p-2"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
               required
+              className="border-2 border-gray-300 rounded-xl p-2"
             />
             <textarea
               name="message"
               rows="7"
               placeholder="Your Message"
               required
+              className="border-2 border-gray-300 rounded-xl p-2"
             ></textarea>
-            <Button type="submit" className="mt-4">
+            <Button type="submit" className="mt-4" variant="secondary">
               Send Message
             </Button>
           </form>
@@ -72,7 +75,7 @@ const Contact = () => {
           <Image
             src={image}
             alt="contact"
-            className="shadow-custom rounded-lg"
+            className="shadow-custom rounded-xl"
             height={470}
             width={470}
             loading="lazy"

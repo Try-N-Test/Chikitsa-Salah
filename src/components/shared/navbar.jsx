@@ -71,9 +71,9 @@ const NavBar = () => {
                     before:-translate-x-1/2
                     before:rounded-full
                     before:bg-gradient-to-r
-                    before:from-green-600
-                    before:via-green-400
-                    before:to-green-500
+                    before:from-teal-600
+                    before:via-teal-400
+                    before:to-teal-500
                     before:opacity-0
                     before:transition-all
                     before:duration-500

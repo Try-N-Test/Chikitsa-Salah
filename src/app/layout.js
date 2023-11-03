@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from "@/components/shared/navbar"
 import Footbar from '@/components/shared/footbar'
+import ChatbotButton from '@/components/shared/chatbotButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footbar />
+
         </body>
     </html>
   )
