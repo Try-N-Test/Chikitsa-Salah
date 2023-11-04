@@ -78,7 +78,7 @@ const chatApi = (req, res) => {
         result.forEach(function (d1) {
             if (d1 != null) {
                 d1.candidates.forEach(function (d2) {
-                    res.send(d2.output);
+                    res.json({response:d2.output});
                 })
             }
         })
