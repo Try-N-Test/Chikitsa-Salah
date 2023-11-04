@@ -19,31 +19,34 @@ function Chat() {
       setResponse("Loading...");
       const { data } = await api.post(`/chat?question=${query}`);
       const formattedResponse = formatResponse(data.response);
-      setResponse(formattedResponse.replace(/\d+\./g, '\n$&'));
+
+      // Update response directly in the state
+      setResponse(formattedResponse);
+
       console.log(response);
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   const formatResponse = (response) => {
-    const sections = response.split("**").filter(Boolean);
-    return sections.map((section, index) => {
-      const sectionContent = section.split("*").filter(Boolean);
-      const sectionTitle = sectionContent.shift().trim();
+  const sections = response.split("**").filter(Boolean);
+  return sections.map((section, index) => {
+    const sectionContent = section.split("*").filter(Boolean);
+    const sectionTitle = sectionContent.shift().trim();
 
-      return (
-        <div key={index} className="response-section">
-          <h3>{sectionTitle}</h3>
-          <ul>
-            {sectionContent.map((item, itemIndex) => (
-              <li key={itemIndex}>{item.trim()}</li>
-            ))}
-          </ul>
-        </div>
-      );
-    });
-  };
+    return (
+      <div key={index} className="response-section">
+        <h3>{sectionTitle}</h3>
+        <ul>
+          {sectionContent.map((item, itemIndex) => (
+            <li key={itemIndex}>{item.trim()}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  });
+};
 
   return (
     <section className=" flex justify-center w-11/12">

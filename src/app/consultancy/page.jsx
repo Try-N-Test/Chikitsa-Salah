@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import Filter from "@/components/consultancy/filter";
 import { AiOutlineSend } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
-
+import axios from "axios";
 import {
   Select,
   SelectContent,
@@ -23,7 +23,24 @@ const dummyData = {
   specialty: "Cardiology",
 };
 
-function consultancy() {
+function Consultancy() {
+  const api = axios.create({
+    baseURL: "http://localhost:8000",
+  });
+
+  const [query, setQuery] = useState("");
+  const [response, setResponse] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let { data } = await api.post(`/doctors?paragraph=${query}`);
+      setResponse(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(response, "test");
   return (
     <div className="bg-background">
       <h2 className="flex justify-center font-sans text-3xl font-medium uppercase">
@@ -114,16 +131,19 @@ function consultancy() {
               {/* end chat message */}
             </div>
             <form
-              onSubmit={""}
+              onSubmit={handleSubmit}
               className="flex items-center rounded-b-xl border-t-2 border-primary/75 bg-white p-2"
             >
               <div className="w-full">
                 <input
                   className="w-full border-b-2 border-black bg-transparent text-black outline-none placeholder:text-slate-600 focus:ring-0 active:bg-transparent md:text-2xl md:placeholder:px-2 md:placeholder:text-lg"
                   type="text"
-                  value={""} // Bind the value to the state
+                  value={query} // Bind the value to the state
                   placeholder="write your query"
-                  autoFocus={true} // Use autoFocus to set autofocus
+                  autoFocus={true}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                  }} // Use autoFocus to set autofocus
                 />
               </div>
 
@@ -139,19 +159,43 @@ function consultancy() {
           </div>
         </section>
       </div>
+      <h3 className="mb-8 mt-16 text-center font-serif text-3xl font-semibold text-slate-950">
+        Consult these <span className="text-primary">Doctors</span>{" "}
+      </h3>
 
-      <div className="flex h-80 w-80 flex-col items-center space-y-4 bg-secondary py-12 rounded-xl">
-        <div className='font-serif text-3xl text-slate-950 font-semibold'>{dummyData.name}</div>
-        <div className='font-sans text-2xl text-background font-base'>{dummyData.degree}</div>
+      <div className="mx-36 py-16 grid grid-cols-3">
+        {response.data?.map((item, id) => {
+          console.log(item, "k");
+          return (
+            <div
+              className="flex h-80 w-80 flex-col items-center space-y-4 rounded-xl bg-secondary py-12"
+              key={id}
+            >
+              <div className="font-serif text-3xl font-semibold text-slate-950">
+                {item.name}
+              </div>
+              <div className="font-base font-sans text-2xl text-background">
+                ({item.degree})
+              </div>
 
-        <div className='font-serif text-xl text-slate-950 font-semibold'>Speciality: <span className='text-background'>{dummyData.specialty}</span></div>
+              <div className="font-serif text-xl font-semibold text-slate-950">
+                Speciality:{" "}
+                <span className="text-background">{item.specialty}</span>
+              </div>
 
-        <div className='font-sans text-2xl text-primary font-medium'>{dummyData.experience}+ Years of Experience</div>
+              <div className="font-sans text-2xl font-medium text-primary">
+                {item.experience}+ Years of Experience
+              </div>
 
-        <div className='font-sans text-sm'>Contact Number: +91 {dummyData.phoneNumber}</div>
+              <div className="text-md font-sans">
+                Contact Number: +91 {item.phoneNumber}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
 
-export default consultancy;
+export default Consultancy;
