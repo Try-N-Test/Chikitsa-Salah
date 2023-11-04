@@ -52,3 +52,68 @@ Some Components might seem similar to the ones in the previous projects, but the
 - Run `npm run dev` to start the development server
 - Run `npm run build` to build the project
 - Run `npm run start` to start the production server
+
+## Backend
+
+## Prerequisites
+
+Before running the project, make sure you have the following prerequisites installed:
+
+- Node.js
+- MongoDB
+- npm (Node Package Manager)
+
+## Getting Started
+
+1. ```bash
+    cd backend
+
+2. Install project dependencies:
+
+   ```bash
+   npm install
+
+3. Create a ```.env``` file in the project's root directory and add the following environment variables:
+   - `MONGO_URI`=YOUR_MONGODB_URI
+   - `API_KEY`=YOUR_GOOGLE_TEXT_SERVICE_API_KEY
+
+## Running the Application
+* Start the server: ```npm start```
+
+* The server will start running on http://localhost:8000.
+
+
+## Project Structure
+The project is organized into various files and directories:
+
+* ```index.js```: The main server file that sets up the Express server, establishes a database connection, and defines routes.
+
+* ```dbConnection.js```: A module for connecting to the MongoDB database.
+
+* ```chatApi.js```: A route for interacting with a chatbot for medical advice.
+
+* ```getDoctors.js```: A route for fetching all available doctors.
+
+* ```doctor_modal.js```: A Mongoose model defining the structure of a doctor's document in the database.
+
+* ```recommendedDoctors.js```: A route for finding doctors based on user input related to health issues.
+
+## Usage 
+
+### Chat 
+
+- **Endpoint**: ```/chat```
+- **Method**: POST
+- **Description**: Send a POST request with a ```question``` parameter to get a medical response.
+
+### Getting all doctors
+
+- **Endpoint**: ```/getDoctors```
+- **Method**: GET
+- **Description**: Send a GET request to get all the doctors available.
+
+### Getting recommended doctors
+
+- **Endpoint**: ```/recommendedDoctors```
+- **Method**: POST
+- **Description**: Send a POST request with a ```paragraph``` parameter to get recommended doctors related to that health issue described in the paragraph.
