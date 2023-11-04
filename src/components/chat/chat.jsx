@@ -3,9 +3,9 @@ import {AiOutlineSend} from "react-icons/ai"
 async function chat() {
   return (
 
-   <section id="chat">
+   <section className=" flex justify-center">
   {/* chat box */}
-  <div className="w-11/12 mt-12 h-96 font-sans bg-[#F2F2F2] rounded-xl flex flex-col border shadow-md "
+  <div className="w-11/12  h-96 font-sans bg-[#F2F2F2] rounded-xl flex flex-col border shadow-md "
   style={{
     boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"
   }}
@@ -13,7 +13,7 @@ async function chat() {
     <div className="flex bg-secondary items-center rounded-t-xl justify-between border-primary/75 border-b-4  p-2">
       {/* user info */}
       <div className=" w-full ">
-        
+
         <div className="pl-2">
           <div className=" py-4 font-semibold">
             <a className="hover:underline text-xl text-center font-serif text-white" href="#">
@@ -26,9 +26,9 @@ async function chat() {
       {/* chat box action */}
       <div>
         <a className="inline-flex hover:bg-indigo-50 rounded-full p-2" href="#">
-       
+
         </a>
-        
+
       </div>
       {/* end chat box action */}
     </div>
@@ -36,8 +36,8 @@ async function chat() {
       {/* chat message */}
       <div className="flex items-center mb-4">
         <div className="flex-none flex flex-col items-center space-y-1 mr-4">
-          
-          
+
+
           <a href="#" className="block text-xs hover:underline">
           Health Hero
           </a>
@@ -53,7 +53,7 @@ async function chat() {
       {/* chat message */}
       <div className="flex items-center flex-row-reverse mb-4">
         <div className="flex-none flex flex-col items-center space-y-1 ml-4">
-          
+
           <a href="#" className="block text-xs hover:underline">
             User
           </a>
@@ -70,12 +70,12 @@ async function chat() {
       </div>
       {/* end chat message */}
       {/* chat message */}
-     
+
       {/* end chat message */}
     </div>
     <div className="flex bg-white border-primary/75 border-t-2 items-center  rounded-b-xl p-2">
       {/* chat input action */}
-     
+
       {/* end chat input action */}
       <div className="w-full   ">
         <input
@@ -95,7 +95,7 @@ async function chat() {
           <AiOutlineSend />
         </button>
       </div>
-      
+
     </div>
   </div>
 </section>

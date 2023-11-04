@@ -28,13 +28,13 @@ const Footbar = () => {
             <h2 className="text-md font-light sm:text-lg">Care &#39;n Cure</h2>
           </div>
 
-          <div className="mt-8   ">
+          <div className="md:mt-8   ">
             <ul className="flex flex-col   gap-3 pb-0  text-lg font-medium sm:text-xl">
               {
                 navLinks.map((nav) => (
-                  <li className="flex hover:text-secondary  mt-4 " key={nav.id}>
-                    <Link 
-                      href={`/${nav.id === 'contact' ? "#contact" : `${nav.id}`}`} 
+                  <li className="flex hover:text-secondary  md:mt-4 " key={nav.id}>
+                    <Link
+                      href={`/${nav.id === 'contact' ? "#contact" : `${nav.id}`}`}
                       className="flex-1 md:text-right m-0"
                     >
                       {nav.title}
@@ -49,11 +49,11 @@ const Footbar = () => {
         <hr className="mb-4 mt-4 h-1 bg-white sm:mb-6 sm:mt-0" />
 
         <div className="flex flex-col justify-between sm:flex-row">
-          <span className="text-white">
-            &copy; 2023 Chikitsa सलाह All rights reserved
+          <span className="text-white text-center">
+            &copy; 2023 Chikitsa सलाह <br className="md:hidden"/>All rights reserved
           </span>
-          <div className="flex align-middle">
-            <h1 className="text-md mt-1 font-semibold md:text-2xl">
+          <div className="md:flex align-middle">
+            <h1 className="text-md mt-1 text-center font-semibold md:text-2xl">
               Follow us on:
             </h1>
             <ul className="saturate ml-4 flex">
