@@ -20,12 +20,12 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "#FFFAE0",
+        background: "#EBEBEB",
         foreground: "hsl(var(--foreground))",
-        primary: "#FB8F67",
-        secondary: "#00C49A",
-        highlight:"#FFC2B4",
-        cta:"#156064",
+        primary: "#59C3C3",
+        secondary: "#52489C",
+        highlight:"#CAD2C5",
+        cta:"#84A98C",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -46,6 +46,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['PT Serif', 'serif']
       },
       borderRadius: {
         lg: "var(--radius)",

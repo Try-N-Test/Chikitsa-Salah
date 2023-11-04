@@ -4,6 +4,10 @@ export const navLinks = [
 		title: "Home"
 	},
 	{
+		id: "chat",
+		title: "Chat"
+	},
+	{
 		id: "consultancy",
 		title: "Consultancy",
 	},

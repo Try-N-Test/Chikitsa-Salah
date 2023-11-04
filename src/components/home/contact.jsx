@@ -42,7 +42,7 @@ const Contact = () => {
       </div>
 
       <div className="mb-12 md:grid md:grid-cols-2">
-        <div className="m-12 md:m-0 md:ml-36 ">
+        <div className="m-12 md:m-0 md:ml-12 ">
           <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 content-center gap-4 ">
             <input
               type="text"
@@ -76,8 +76,8 @@ const Contact = () => {
             src={image}
             alt="contact"
             className="shadow-custom rounded-xl"
-            height={470}
-            width={470}
+            height={370}
+            width={370}
             loading="lazy"
           />
         </div>

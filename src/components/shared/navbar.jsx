@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo1.png";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +58,7 @@ const NavBar = () => {
               navLinks.map((nav) => (
                 <li key={nav.id}>
                   <Link
-                    href={`/${nav.id === 'contact' ? "#contact" : `${nav.id}`}`}
+                    href={`/${nav.id === 'contact' ? "#contact" : nav.id === 'chat'? "#chat": `${nav.id}`}`}
                     className="duration-250 relative block cursor-pointer
                     px-4
                     py-2
@@ -71,14 +71,14 @@ const NavBar = () => {
                     before:-translate-x-1/2
                     before:rounded-full
                     before:bg-gradient-to-r
-                    before:from-teal-600
-                    before:via-teal-400
-                    before:to-teal-500
+                    before:from-blue-600
+                    before:via-blue-400
+                    before:to-blue-500
                     before:opacity-0
                     before:transition-all
                     before:duration-500
                     before:content-['']
-                    hover:text-green-900
+                    hover:text-blue-900
                     hover:before:w-3/4
                     hover:before:opacity-100"
                   >

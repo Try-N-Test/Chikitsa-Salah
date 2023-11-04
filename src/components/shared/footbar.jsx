@@ -12,7 +12,7 @@ import { navLinks } from "@/constant";
 const Footbar = () => {
   return (
     <footer className="bg-primary p-4 text-white md:p-8">
-      <div className="container mx-auto">
+      <div className="container  mx-auto">
         <div className="flex flex-col justify-between sm:flex-row">
           <div className="mb-4 sm:mb-0">
             <Image
@@ -25,17 +25,17 @@ const Footbar = () => {
             <h1 className="mt-4 font-serif text-xl font-bold sm:text-2xl">
               Chikitsa सलाह
             </h1>
-            <h2 className="text-md font-light sm:text-lg">moto</h2>
+            <h2 className="text-md font-light sm:text-lg">Care &#39;n Cure</h2>
           </div>
 
-          <div className="mt-8">
-            <ul className="flex flex-col gap-3 pb-0 text-lg font-medium sm:text-xl">
+          <div className="mt-8   ">
+            <ul className="flex flex-col   gap-3 pb-0  text-lg font-medium sm:text-xl">
               {
                 navLinks.map((nav) => (
-                  <li className="flex hover:text-secondary" key={nav.id}>
+                  <li className="flex hover:text-secondary  mt-4 " key={nav.id}>
                     <Link 
                       href={`/${nav.id === 'contact' ? "#contact" : `${nav.id}`}`} 
-                      className="flex-1 md:text-right"
+                      className="flex-1 md:text-right m-0"
                     >
                       {nav.title}
                     </Link>
@@ -46,7 +46,7 @@ const Footbar = () => {
           </div>
         </div>
 
-        <hr className="mb-4 mt-4 h-1 bg-white sm:mb-6 sm:mt-7" />
+        <hr className="mb-4 mt-4 h-1 bg-white sm:mb-6 sm:mt-0" />
 
         <div className="flex flex-col justify-between sm:flex-row">
           <span className="text-white">
