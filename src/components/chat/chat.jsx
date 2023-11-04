@@ -3,7 +3,7 @@ import {AiOutlineSend} from "react-icons/ai"
 async function chat() {
   return (
 
-   <section id="chat">
+   <section id="">
   {/* chat box */}
   <div className="w-11/12 mt-12 h-96 font-sans bg-[#F2F2F2] rounded-xl flex flex-col border shadow-md "
   style={{
