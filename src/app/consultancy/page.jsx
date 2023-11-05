@@ -11,6 +11,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Loader from "@/components/shared/Loader"
+
+// Default values shown
 
 function Consultancy() {
   const api = axios.create({
@@ -19,12 +22,15 @@ function Consultancy() {
 
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
-
+  const [loader ,setLoader]=useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoader(true)
       let { data } = await api.post(`/doctors?paragraph=${query}`);
+
       setResponse(data);
+      setLoader(false)
     } catch (error) {
       console.log(error);
     }
@@ -32,6 +38,7 @@ function Consultancy() {
   console.log(response, "test");
   return (
     <div className="bg-background">
+      {loader && <Loader/>}
       <h2 className="flex justify-center font-sans text-3xl font-medium uppercase">
         Recommendations{" "}
       </h2>
@@ -54,7 +61,7 @@ function Consultancy() {
         <section className="my-4 flex justify-center">
           {/* chat box */}
           <div
-            className="flex  h-96 w-1/2 flex-col rounded-xl border bg-[#F2F2F2] font-sans shadow-md "
+            className="flex w-4/5  h-96 md:w-1/2 flex-col rounded-xl border bg-[#F2F2F2] font-sans shadow-md "
             style={{
               boxShadow:
                 "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
@@ -93,7 +100,7 @@ function Consultancy() {
                   </a>
                 </div>
                 <div className="relative mb-2 flex-1 rounded-xl  bg-[#CAD2C5] p-2 text-black">
-                  <div className="px-1">Do you want to consult a doctor</div>
+                  <div className="px-1">Do you want to consult a doctor?</div>
                   {/* arrow */}
                   <div className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 rotate-45 transform bg-indigo-400" />
                   {/* end arrow */}
@@ -101,19 +108,7 @@ function Consultancy() {
               </div>
               {/* end chat message */}
               {/* chat message */}
-              <div className="mb-4 flex flex-row-reverse items-center">
-                <div className="ml-4 flex flex-none flex-col items-center space-y-1">
-                  <a href="#" className="block text-xs hover:underline">
-                    User
-                  </a>
-                </div>
-                <div className="relative  mb-2 flex-1 rounded-xl bg-secondary p-2 text-white">
-                  <div>yes</div>
-                  {/* arrow */}
-                  <div className="absolute right-0 top-1/2 h-2 w-2 translate-x-1/2 rotate-45 transform bg-indigo-100" />
-                  {/* end arrow */}
-                </div>
-              </div>
+
               {/* end chat message */}
               {/* chat message */}
 
@@ -128,7 +123,7 @@ function Consultancy() {
                   className="w-full border-b-2 border-black bg-transparent text-black outline-none placeholder:text-slate-600 focus:ring-0 active:bg-transparent md:text-2xl md:placeholder:px-2 md:placeholder:text-lg"
                   type="text"
                   value={query} // Bind the value to the state
-                  placeholder="write your query"
+                  placeholder="write your symptoms"
                   autoFocus={true}
                   onChange={(e) => {
                     setQuery(e.target.value);
@@ -148,11 +143,11 @@ function Consultancy() {
           </div>
         </section>
       </div>
-      <h3 className="mb-8 mt-16 text-center font-serif text-3xl font-semibold text-slate-950">
+      <h3 className="mb-2 md:mb-8 mt-16 text-center font-serif text-3xl font-semibold text-slate-950">
         Consult these <span className="text-primary">Doctors</span>{" "}
       </h3>
 
-      <div className="mx-36 py-16 grid grid-cols-3">
+      <div className="md:mx-36  mx-4 gap-4 py-16 grid grid-cols-1 md:grid-cols-3">
         {response.data?.map((item, id) => {
           console.log(item, "k");
           return (

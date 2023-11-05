@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
+import Loader from "../shared/Loader";
 function Chat() {
   const api = axios.create({
     baseURL: "https://chikitsa-salah.vercel.app",
@@ -12,14 +13,15 @@ function Chat() {
 
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
-
+  const [loader ,setLoader]=useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoader(true)
       setResponse("Loading...");
       const { data } = await api.post(`/chat?question=${query}`);
       const formattedResponse = formatResponse(data.response);
-
+      setLoader(false)
       // Update response directly in the state
       setResponse(formattedResponse);
 
@@ -50,7 +52,7 @@ function Chat() {
 
   return (
     <section className=" flex justify-center w-11/12">
-      {/* chat box */}
+      {loader && <Loader/>}
       <div
         className="flex  h-96 w-11/12 flex-col rounded-xl border bg-[#F2F2F2] font-sans shadow-md "
         style={{
@@ -144,7 +146,7 @@ function Chat() {
         <form
           onSubmit={handleSubmit}
           className="flex items-center rounded-b-xl border-t-2 border-primary/75 bg-white p-2"
-          
+
         >
           <div className="w-full">
             <input
