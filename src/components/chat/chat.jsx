@@ -5,10 +5,10 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 function Chat() {
   const api = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://chikitsa-salah.vercel.app",
   });
 
-  // http://localhost:8000/chat?question=I am suffering from fever
+  // https://chikitsa-salah.vercel.app/chat?question=I am suffering from fever
 
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");

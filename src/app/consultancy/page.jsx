@@ -12,20 +12,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const dummyData = {
-  _id: "654569b8e1316ca328b7c996",
-  name: "Dr. John Doe",
-  degree: "MD",
-  email: "john.doe@example.com",
-  experience: 10,
-  keywords: ["fever", "cold", "cough"],
-  phoneNumber: 1234567890,
-  specialty: "Cardiology",
-};
-
 function Consultancy() {
   const api = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://chikitsa-salah.vercel.app",
   });
 
   const [query, setQuery] = useState("");
