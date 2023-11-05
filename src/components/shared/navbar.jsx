@@ -96,7 +96,7 @@ const NavBar = () => {
           {
             navLinks.map((nav) => (
               <Link
-                href={`/${nav.id === 'contact' ? "#contact" : `${nav.id}`}`}
+                href={`/${nav.id === 'contact' ? "#contact" : nav.id === 'chat'? "#chat": `${nav.id}`}`}
                 onClick={() => setIsOpen(false)}
                 key={nav.id}
                 className="block py-2 pl-3 pr-4 hover:rounded hover:bg-green-300 hover:text-green-900"
