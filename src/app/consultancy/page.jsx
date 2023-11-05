@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Filter from "@/components/consultancy/filter";
 import { AiOutlineSend } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
@@ -37,8 +36,10 @@ function Consultancy() {
   };
   console.log(response, "test");
   return (
-    <div className="bg-background">
+    <>
+
       {loader && <Loader/>}
+    <div className="bg-background">
       <h2 className="flex justify-center font-sans text-3xl font-medium uppercase">
         Recommendations{" "}
       </h2>
@@ -179,6 +180,7 @@ function Consultancy() {
         })}
       </div>
     </div>
+    </>
   );
 }
 
