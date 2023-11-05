@@ -101,7 +101,7 @@ function Consultancy() {
                   </a>
                 </div>
                 <div className="relative mb-2 flex-1 rounded-xl  bg-[#CAD2C5] p-2 text-black">
-                  <div className="px-1">Do you want to consult a doctor?</div>
+                  <div className="px-1">May I request a description of the symptoms that are troubling you?</div>
                   {/* arrow */}
                   <div className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 rotate-45 transform bg-indigo-400" />
                   {/* end arrow */}
