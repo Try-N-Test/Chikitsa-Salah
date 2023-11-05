@@ -27,9 +27,10 @@ Chikitsa Salah's services are designed to be affordable and accessible to everyo
 Chikitsa Salah is a comprehensive healthcare platform that offers a range of essential services, including appointment booking, advisory services, and chatbot support. It prioritizes convenience, affordability, and high-quality services. Download the Chikitsa Salah app today and take control of your health!
 
 # Declaration of Authorship
-The Application is a Next JS 14 application which uses the following third party libraries:
+The Application is a Next JS 14 application which uses the following third party libraries and services:
 - [ShadCN/UI] for Buttons (later modified to suit the colour pallete)
 - [Slider-JS] for the Slider
+- [Google-Palm-2] API for generative AI embedded within Chatbot
 
 The Application is developed by the following team members(Team `Try N' Test`):
 - `Dipesh Ranjan`
