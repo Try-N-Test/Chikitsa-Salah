@@ -12,7 +12,7 @@ function Loader() {
                 <div class=" ">
                     <div class=""></div>
                     <div id="">
-                    <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin "></div>
+                    <div className="w-16 h-16 bg-primary border-4 border-dashed rounded-full animate-spin "></div>
 
 
                     </div>
