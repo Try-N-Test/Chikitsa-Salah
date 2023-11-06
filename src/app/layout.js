@@ -2,8 +2,7 @@ import { Inter , Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from "@/components/shared/navbar"
 import Footbar from '@/components/shared/footbar'
-import ChatbotButton from '@/components/shared/chatbotButton'
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata = {
   title: 'Chikitsa सलाह',
@@ -14,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Navbar />
         {children}
         <Footbar />

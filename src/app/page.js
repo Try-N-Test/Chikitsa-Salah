@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "@/components/home/hero"
 import Contact from "@/components/home/contact";
 import Chat from "@/components/chat/chat";
@@ -10,7 +9,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between ">
       <Hero />
       <Feature />
- 
       <Chat />
       <Contact />
     </main>

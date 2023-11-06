@@ -9,18 +9,21 @@ import Link from "next/link";
 
 const about = () => {
   return (
-    <section className="">
-      <div className="mt-8 flex flex-col items-center">
-        <h1 className="-z-50 mb-12 font-serif text-4xl font-semibold">
+    <section className="bg-background">
+      <div className="pt-8 flex flex-col items-center">
+        <h1 className="mb-4 font-serif text-4xl font-semibold">
           Meet Our <span className="text-primary">Team</span>
         </h1>
+        <h2 className="mb-8 font-serif text-2xl font-semibold text-secondary">
+          TRY <span className="text-black"> N&#39;</span> TEST
+        </h2>
         <div className="flex flex-col gap-12 md:grid md:grid-cols-4 md:gap-0">
           {data.map((item, index) => (
             <div
               className="duration-400 flex flex-col items-center gap-1 ease-in-out"
               key={index}
             >
-              <div className="duration-400 bg-gradient-radial left-0 top-0 h-80 w-72 rounded-br-3xl rounded-tl-3xl from-blue-500 to-purple-500 ease-in-out hover:bg-gradient-to-b">
+              <div className="duration-400 bg-gradient-radial left-0 top-0 h-80 w-72 rounded-br-3xl rounded-tl-3xl from-secondary to-primary ease-in-out hover:bg-gradient-to-b">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -44,7 +47,7 @@ const about = () => {
                   rel="noopener noreferrer"
                 >
                   {" "}
-                  <BsLinkedin className="m-2 h-8 w-8 cursor-pointer  hover:text-secondary" />{" "}
+                  <BsLinkedin className="m-2 h-8 w-8 cursor-pointer  hover:text-primary" />{" "}
                 </Link>
                 <Link
                   href={item.instagram}
@@ -52,7 +55,7 @@ const about = () => {
                   className="cursor-pointer"
                   rel="noopener noreferrer"
                 >
-                  <BsInstagram className="m-2 h-8 w-8 cursor-pointer hover:text-secondary" />
+                  <BsInstagram className="m-2 h-8 w-8 cursor-pointer hover:text-primary" />
                 </Link>
                 <Link
                   href={item.github}
@@ -61,7 +64,7 @@ const about = () => {
                   rel="noopener noreferrer"
                 >
                   {" "}
-                  <BsGithub className="m-2 h-8 w-8 cursor-pointer hover:text-secondary" />{" "}
+                  <BsGithub className="m-2 h-8 w-8 cursor-pointer hover:text-primary" />{" "}
                 </Link>
               </div>
             </div>
@@ -69,9 +72,9 @@ const about = () => {
         </div>
       </div>
 
-      <div className="m-4 rounded-lg bg-secondary p-4 shadow-2xl md:m-16">
-        <div className="rounded-lg bg-white p-1">
-          <div className="flex flex-col items-center rounded-lg bg-secondary p-2 md:p-4">
+      <div className="m-4 rounded-xl bg-secondary p-4 shadow-2xl md:m-16">
+        <div className="rounded-xl bg-white p-1">
+          <div className="flex flex-col items-center rounded-xl bg-secondary p-2 md:p-4">
             <h1 className="font-serif text-4xl text-white">About Us</h1>
             <p className="text-md m-4 text-justify font-sans font-light text-white">
               At Chikitsa Salah, we stand for a fundamental belief: that
@@ -135,8 +138,8 @@ const about = () => {
             more than just a service; it&#39;s a gateway to a healthier, happier
             life. We are dedicated to providing accessible, affordable, and
             high-quality healthcare services that empower individuals to take
-            control of their well-being. We aspire to offer a holistic
-            approach to healthcare, addressing physical, mental, and emotional
+            control of their well-being. We aspire to offer a holistic approach
+            to healthcare, addressing physical, mental, and emotional
             well-being. With a focus on data-driven insights, we enable
             individuals to make informed decisions about their health, fostering
             a proactive approach to wellness. Our vision extends beyond

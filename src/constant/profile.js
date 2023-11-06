@@ -1,7 +1,7 @@
 import Dipesh from "@/assets/dipesh.png";
 import Isheta from "@/assets/isheta.png";
-import divyanshu from "@/assets/divyanshu.png";
-import Preyanshu from "@/assets/preyanshu.png";
+import Rajat from "@/assets/rajat.png";
+import Kislay from "@/assets/kislay.png";
 
 export const data = [
     {
@@ -24,7 +24,7 @@ export const data = [
     },
     {
       name: "Rajat Srivastava",
-      image: divyanshu,
+      image: Rajat,
       team: "Team Member",
       role: "Backend Developer",
       linkedin: "https://www.linkedin.com/in/rajat-srivastava-032851230/",
@@ -33,7 +33,7 @@ export const data = [
     },
     {
       name: "Kislay Gupta",
-      image: Preyanshu,
+      image: Kislay,
       team: "Team Member",
       role: "Front-End Developer",
       linkedin: "https://www.linkedin.com/in/kislay-gupta/",
