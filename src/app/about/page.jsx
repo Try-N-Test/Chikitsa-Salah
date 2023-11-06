@@ -23,7 +23,7 @@ const about = () => {
               className="duration-400 flex flex-col items-center gap-1 ease-in-out"
               key={index}
             >
-              <div className="duration-400 bg-gradient-radial left-0 top-0 h-80 w-72 rounded-br-3xl rounded-tl-3xl from-secondary to-primary ease-in-out hover:bg-gradient-to-b">
+              <div className="duration-400 bg-gradient-radial left-0 top-0 h-80 w-72 rounded-br-3xl rounded-tl-3xl from-secondary to-primary ease-in-out bg-gradient-to-r hover:bg-gradient-to-b">
                 <Image
                   src={item.image}
                   alt={item.name}
