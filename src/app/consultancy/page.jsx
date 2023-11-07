@@ -185,13 +185,19 @@ function Consultancy() {
         {/* <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
           Consult these <span className="text-primary">Doctors</span>{" "}
         </h3> */}
-        {response == "No Doctor found!" || response === "" ? (
+
+        {response === "" ? (
           <></>
+        ) : response == "No Doctor found!" ? (
+          <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
+            No <span className="text-primary">Doctor</span> found😢{" "}
+          </h3>
         ) : (
           <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
             Consult these <span className="text-primary">Doctors</span>{" "}
           </h3>
         )}
+        
         <div className="mx-4  grid grid-cols-1 gap-4 py-16 md:mx-36 md:grid-cols-3">
           {response.data?.map((item, id) => {
             console.log(item, "k");
@@ -222,6 +228,7 @@ function Consultancy() {
               </div>
             );
           })}
+
         </div>
       </div>
     </>
