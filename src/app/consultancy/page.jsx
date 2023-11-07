@@ -27,22 +27,22 @@ function Consultancy() {
     try {
       setLoader(true);
       let { data } = await api.post(`/doctors?paragraph=${query}`);
-
       setResponse(data);
       setLoader(false);
     } catch (error) {
-      console.log(error);
+      setResponse("No Doctor found!");
+      setLoader(false);
     }
   };
-  console.log(response, "test");
+  // console.log(response, "test");
   return (
     <>
       {loader && <Loader />}
       <div className="bg-background">
-        <h2 className="flex justify-center font-sans text-3xl font-medium uppercase">
+        <h2 className="flex justify-center pt-5 font-sans text-3xl font-medium uppercase">
           Recommendations{" "}
         </h2>
-        <div className="grid grid-cols-3 gap-3 ">
+        {/* <div className="grid grid-cols-3 gap-3 ">
           <div className="mx-auto">
             <Select className="">
               <SelectTrigger className="w-[180px] rounded-xl border-secondary text-secondary">
@@ -55,10 +55,9 @@ function Consultancy() {
               </SelectContent>
             </Select>
           </div>
-        </div>
-
+        </div> */}
         <div>
-          <section className="my-4 flex justify-center">
+          <section className="my-4 flex justify-center pt-5">
             {/* chat box */}
             <div
               className="flex h-96  w-4/5 flex-col rounded-xl border bg-[#F2F2F2] font-sans shadow-md md:w-1/2 "
@@ -110,21 +109,39 @@ function Consultancy() {
                   </div>
                 </div>
                 {response ? (
-                  <div className="mb-4 flex items-center">
-                    <div className="mr-4 flex flex-none flex-col items-center space-y-1">
-                      <a href="#" className="block text-xs hover:underline">
-                        Health Hero
-                      </a>
-                    </div>
-                    <div className="relative mb-2 flex-1 rounded-xl  bg-[#CAD2C5] p-2 text-black">
-                      <div className="px-1">
-                        You may consult any doctor recommended below.
+                  response !== "No Doctor found!" ? (
+                    <div className="mb-4 flex items-center">
+                      <div className="mr-4 flex flex-none flex-col items-center space-y-1">
+                        <a href="#" className="block text-xs hover:underline">
+                          Health Hero
+                        </a>
                       </div>
-                      {/* arrow */}
-                      <div className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 rotate-45 transform bg-indigo-400" />
-                      {/* end arrow */}
+                      <div className="relative mb-2 flex-1 rounded-xl  bg-[#CAD2C5] p-2 text-black">
+                        <div className="px-1">
+                          You may consult any doctor recommended below.
+                        </div>
+                        {/* arrow */}
+                        <div className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 rotate-45 transform bg-indigo-400" />
+                        {/* end arrow */}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <>
+                      <div className="mb-4 flex items-center">
+                        <div className="mr-4 flex flex-none flex-col items-center space-y-1">
+                          <a href="#" className="block text-xs hover:underline">
+                            Health Hero
+                          </a>
+                        </div>
+                        <div className="relative mb-2 flex-1 rounded-xl  bg-[#CAD2C5] p-2 text-black">
+                          <div className="px-1">No Doctor found!</div>
+                          {/* arrow */}
+                          <div className="absolute left-0 top-1/2 h-2 w-2 -translate-x-1/2 rotate-45 transform bg-indigo-400" />
+                          {/* end arrow */}
+                        </div>
+                      </div>
+                    </>
+                  )
                 ) : (
                   <></>
                 )}
@@ -165,10 +182,16 @@ function Consultancy() {
             </div>
           </section>
         </div>
-        <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
+        {/* <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
           Consult these <span className="text-primary">Doctors</span>{" "}
-        </h3>
-
+        </h3> */}
+        {response == "No Doctor found!" || response === "" ? (
+          <></>
+        ) : (
+          <h3 className="mb-2 mt-16 text-center font-serif text-3xl font-semibold text-slate-950 md:mb-8">
+            Consult these <span className="text-primary">Doctors</span>{" "}
+          </h3>
+        )}
         <div className="mx-4  grid grid-cols-1 gap-4 py-16 md:mx-36 md:grid-cols-3">
           {response.data?.map((item, id) => {
             console.log(item, "k");
