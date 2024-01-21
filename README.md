@@ -38,11 +38,6 @@ The Application is developed by the following team members(Team `Try N' Test`):
 - `Rajat Srivastava`
 - `Kislay Gupta`
 
-The Application also features a few features from previous projects of the team members:
-- NavBar
-- Footer
-- About us page
-
 ### Note
 Some Components might seem similar to the ones in the previous projects, but they are not even remotely same. e.g. - contact section (previous project's contact uses zod with tailwind, while this is plain html form)
 
